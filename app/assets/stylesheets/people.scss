@@ -1,0 +1,44 @@
+// Place all the styles related to the people controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-title {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.person-form {
+  border: solid 1px;
+  padding: 30px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.field {
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.field label {
+  width: 250px;
+}
+
+input, button, select {
+  width: 40%;
+}
+
+textarea {
+  width: 100%;
+  min-height: 15vh;
+}
+
+.note-area {
+}
+
+button, [type="submit"] {
+  width: 40%;
+  padding: 10px;
+  margin-left: 30%;
+  background-color: bisque;
+}

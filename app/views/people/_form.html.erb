@@ -1,0 +1,96 @@
+<div class="person-form">
+
+<%= form_for(person) do |f| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, t('name') %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city, t('city') %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :source, t('source') %>
+    <%= f.select :source, Person.source_options %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fellowship, t('fellowship') %>
+    <%= f.select :fellowship, Person.fellowship_options %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_gospel, t('need_gospel') %>
+    <%= f.check_box :need_gospel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_baptism, t('need_baptism') %>
+    <%= f.check_box :need_baptism %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_healing, t('need_healing') %>
+    <%= f.check_box :need_healing %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_deliverance, t('need_deliverance') %>
+    <%= f.check_box :need_deliverance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_holy_spirit, t('need_holy_spirit') %>
+    <%= f.check_box :need_holy_spirit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :need_bible_study, t('need_bible_study') %>
+    <%= f.check_box :need_bible_study %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remote_possible, t('remote_possible') %>
+    <%= f.check_box :remote_possible %>
+  </div>
+
+  <div class="field">
+    <%= f.label :background, :background %>
+    <%= f.select :background, Person.background_options %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact, t('contact') %>
+    <%= f.text_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :priority, t('priority') %>
+    <%= f.select :priority, Person.priority_options %>
+  </div>
+
+  <hr />
+  <h3>Dodatkowe uwagi</h3>
+  <div class="note-area">
+    <%= f.text_area :note %>
+  </div>
+      <hr />
+  <div class="actions">
+    <%= f.submit t('send') %>
+  </div>
+<% end %>
+</div>

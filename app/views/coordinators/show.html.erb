@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @coordinator.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @coordinator.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @coordinator.phone %>
+</p>
+
+<p>
+  <strong>Skype:</strong>
+  <%= @coordinator.skype %>
+</p>
+
+<p>
+  <strong>Fb:</strong>
+  <%= @coordinator.fb %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @coordinator.address %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @coordinator.note %>
+</p>
+
+<%= link_to t('edit'), edit_coordinator_path(@coordinator) %> |
+<%= link_to t('back'), coordinators_path %>
