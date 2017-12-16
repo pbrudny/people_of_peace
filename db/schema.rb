@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120151854) do
+ActiveRecord::Schema.define(version: 20171216155222) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "coordinators", force: :cascade do |t|
     t.string   "name"
@@ -49,7 +52,9 @@ ActiveRecord::Schema.define(version: 20171120151854) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "contact"
-    t.index ["coordinator_id"], name: "index_people_on_coordinator_id"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.index ["coordinator_id"], name: "index_people_on_coordinator_id", using: :btree
   end
 
 end

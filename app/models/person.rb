@@ -1,6 +1,12 @@
 class Person < ApplicationRecord
   belongs_to :coordinator, optional: true
 
+  geocoded_by :city
+  after_validation :geocode
+
+  validates :name, presence: true
+  validates :city, presence: true
+
   def self.background_options
     ['Zwyczajny', 'New age', 'Metal', 'rozwój osobisty', 'okultyzm i magia', 'uzależnienie', 'nie wiem']
   end
