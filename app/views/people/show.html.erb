@@ -1,16 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    #map {
-        height: 100%;
-    }
-</style>
-
 <p>
   <strong>Name:</strong>
   <%= @person.name %>
@@ -21,29 +10,90 @@
   <%= @person.email %>
 </p>
 
-Hejka
-<div id="map">Mapka</div>
-<script>
+<p>
+  <strong>Phone:</strong>
+  <%= @person.phone %>
+</p>
 
-    function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+<p>
+  <strong>Skype:</strong>
+  <%= @person.skype %>
+</p>
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: myLatLng
-        });
+<p>
+  <strong>Fb:</strong>
+  <%= @person.fb %>
+</p>
 
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Hello World!'
-        });
-    }
-</script>
+<p>
+  <strong>City:</strong>
+  <%= @person.city %>
+</p>
 
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPLlS5IPr3SsP92xVQJwGa7GORtrdXBEo&callback=initMap">
-</script>
+<p>
+  <strong>Note:</strong>
+  <%= @person.note %>
+</p>
+
+<p>
+  <strong>Added by:</strong>
+  <%= @person.added_by %>
+</p>
+
+<p>
+  <strong>Fellowship:</strong>
+  <%= @person.fellowship %>
+</p>
+
+<p>
+  <strong>Need gospel:</strong>
+  <%= @person.need_gospel %>
+</p>
+
+<p>
+  <strong>Need baptism:</strong>
+  <%= @person.need_baptism %>
+</p>
+
+<p>
+  <strong>Need healing:</strong>
+  <%= @person.need_healing %>
+</p>
+
+<p>
+  <strong>Need deliverance:</strong>
+  <%= @person.need_deliverance %>
+</p>
+
+<p>
+  <strong>Need holy spirit:</strong>
+  <%= @person.need_holy_spirit %>
+</p>
+
+<p>
+  <strong>Need bible study:</strong>
+  <%= @person.need_bible_study %>
+</p>
+
+<p>
+  <strong>Remote possible:</strong>
+  <%= @person.remote_possible %>
+</p>
+
+<p>
+  <strong>Background:</strong>
+  <%= @person.background %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @person.status %>
+</p>
+
+<p>
+  <strong>Coordinator:</strong>
+  <%= @person.coordinator %>
+</p>
 
 <%= link_to t('edit'), edit_person_path(@person) %> |
 <%= link_to t('back'), people_path %>
