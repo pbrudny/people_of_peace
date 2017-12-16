@@ -6,9 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
   </head>
 
   <body>
+
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPLlS5IPr3SsP92xVQJwGa7GORtrdXBEo&callback=initMap">
+  </script>
       <div class="container">
         <%= yield %>
       </div>
