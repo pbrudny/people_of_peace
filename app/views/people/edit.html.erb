@@ -17,9 +17,9 @@
 
       <div class="field">
         <%= f.label :coordinator, t('coordinator') %>
-        <%= f.select :coordinator, Coordinator.options %>
+        <%= f.select :coordinator, Coordinator.options, include_blank: true %>
       </div>
-
+      <hr />
       <div class="field">
         <%= f.label :name, t('name') %>
         <%= f.text_field :name %>
@@ -90,11 +90,6 @@
         <%= f.select :priority, Person.priority_options %>
       </div>
 
-      <div class="field">
-        <%= f.label :coordintator, t('coordinator') %>
-        <%= f.select :coordinator_id, Coordinator.all.map { |c| [c.name, c.id]} %>
-      </div>
-
       <hr />
       <h3>Dodatkowe uwagi</h3>
       <div class="note-area">
@@ -102,7 +97,7 @@
       </div>
       <hr />
       <div class="actions">
-        <%= f.submit t('send') %>
+        <%= f.submit t('update') %>
       </div>
   <% end %>
 </div>

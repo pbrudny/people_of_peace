@@ -30,7 +30,7 @@ class PeopleController < ApplicationController
   def update
     respond_to do |format|
       if @person.update(person_params)
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
+        format.html { redirect_to people_path, notice: 'Person was successfully updated.' }
       else
         format.html { render :edit }
       end

@@ -36,6 +36,7 @@ pl:
   note: "Notatka"
   priority: "Tryb"
   send: "Wyślij zgłoszenie"
+  update: "Aktualizuj"
   contact: 'Kontakt (E-mail, telefon, FB)'
   new_person: "Nowe zgłoszenie"
   person_created: "Zgłoszenie dodane!"

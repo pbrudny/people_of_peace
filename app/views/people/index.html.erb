@@ -20,6 +20,7 @@
             var contentString<%= i %> = '<div id="content">'+
                     '<div id="siteNotice">'+
                             'Od: <%= person.added_by.try(:name) %> <%= time_ago_in_words(person.created_at) %> | Opieka: <%= person.coordinator.try(:name)%>'+
+                            '<%= link_to 'edytuj', edit_person_path(person) %>'+
                     '</div>'+
                     '<h1 id="firstHeading" class="firstHeading"><%= person.name%></h1>'+
                     '<div id="bodyContent">'+
@@ -43,10 +44,30 @@
 
         <% Coordinator.all.each_with_index do |coordinator, i| %>
         var supervisor<%= i %> = {lat: <%= coordinator.latitude %>, lng: <%= coordinator.longitude %>};
-        var marker = new google.maps.Marker({
+        var markerCoo<%= i %> = new google.maps.Marker({
             position: supervisor<%= i %>,
             icon: "<%= asset_path('koordynator.png') %>",
             map: map
+        });
+
+        var contentString2<%= i %> = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading"><%= coordinator.name%></h1>'+
+                '<div id="bodyContent">'+
+                '<p>Email: <%= coordinator.email %></p>' +
+                '<p>Tel. <%= coordinator.phone %></p>' +
+                '<p>FB: <%= coordinator.fb %></p>' +
+                '<p>Skype: <%= coordinator.skype %></p>' +
+                '<p>Adres: <%= coordinator.address %></p>' +
+                '</div>'+
+                '</div>';
+
+        var infowindow2<%= i %> = new google.maps.InfoWindow({
+            content: contentString2<%= i %>
+        });
+        markerCoo<%= i %>.addListener('click', function() {
+            infowindow2<%= i %>.open(map, markerCoo<%= i %>);
         });
         <% end %>
     }
