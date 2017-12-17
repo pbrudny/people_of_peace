@@ -1,0 +1,71 @@
+<% if person.name %>
+<p>  
+  <strong>Kto:</strong>
+  <%= person.name %>
+</p>
+<% end %>
+<% if person.email %> <p>
+  <strong>Email:</strong>
+  <%= person.email %>
+</p> <% end %>
+<% if person.phone %> <p>
+  <strong>Telefon:</strong>
+  <%= person.phone %>
+</p> <% end %>
+<% if person.skype %> <p>
+  <strong>Skype:</strong>
+  <%= person.skype %>
+</p> <% end %>
+<% if person.fb %> <p>
+  <strong>Facebook:</strong>
+  <%= person.fb %>
+</p> <% end %>
+<% if person.city %> <p>
+  <strong>Miasto:</strong>
+  <%= person.city %>
+</p> <% end %>
+<% if person.note.present? %> <p>
+  <strong>Notka:</strong>
+  <%= person.note %>
+</p> <% end %>
+<% if person.added_by %> <p>
+  <strong>Dodany przez:</strong>
+  <%= person.added_by %>
+</p> <% end %>
+<% if person.fellowship %> <p>
+  <strong>Wspólnota:</strong>
+  <%= person.fellowship %>
+</p> <% end %>
+<% if person.need_gospel %> <p>
+  <strong>Chce usłyszeć ewangelię</strong>
+</p> <% end %>
+<% if person.need_baptism %> <p>
+  <strong>Chce chrztu</strong>
+</p> <% end %>
+<% if person.need_healing %> <p>
+  <strong>Potrzebuje uzdrowienia</strong>
+</p> <% end %>
+<% if person.need_deliverance %> <p>
+  <strong>Potrzebuje uwolnienia</strong>
+</p> <% end %>
+<% if person.need_holy_spirit %> <p>
+  <strong>Chce chrztu w Duchu Świętym</strong>
+</p> <% end %>
+<% if person.need_bible_study %> <p>
+  <strong>Chciałby wziąć udział w studium biblijnym:</strong>
+</p> <% end %>
+<% if person.remote_possible %> <p>
+  <strong>Może być zdalnie</strong>
+</p> <% end %>
+<% if person.background %> <p>
+  <strong>Background:</strong>
+  <%= person.background %>
+</p> <% end %>
+<% if person.status %> <p>
+  <strong>Status:</strong>
+  <%= person.status %>
+</p> <% end %>
+<% if person.coordinator %> <p>
+  <strong>Coordinator:</strong>
+  <%= person.coordinator.try :name %>
+</p> <% end %>

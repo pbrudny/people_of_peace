@@ -90,6 +90,11 @@
         <%= f.select :priority, Person.priority_options %>
       </div>
 
+      <div class="field">
+        <%= f.label :coordintator, t('coordinator') %>
+        <%= f.select :coordinator_id, Coordinator.all.map { |c| [c.name, c.id]} %>
+      </div>
+
       <hr />
       <h3>Dodatkowe uwagi</h3>
       <div class="note-area">
