@@ -12,12 +12,33 @@
   border: solid 1px;
   padding: 30px;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
 }
 
 .field {
-  padding-left: 30px;
-  padding-top: 10px;
+  margin-top: 1em;
+  margin-left: 30%;
+  width: 100%;
+}
+
+.field input {
+  height: 40px;
+  padding: 15px;
+}
+
+.checkbox {
+  margin-top: 1em;
+  margin-left: 30%;
+  width: 30%;
+}
+
+.checkbox input {
+  width: 10%;
+  padding: 5px;
+}
+
+.checkbox label {
+  padding: 5px;
 }
 
 .field label {
