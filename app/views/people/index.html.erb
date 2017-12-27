@@ -3,10 +3,10 @@
 <div id="map"></div>
 <script>
     function initMap() {
-        var uluru = {lat: <%= Person.last.latitude %>, lng: <%= Person.last.longitude %>};
+        var startingLocation = {lat: <%= Person.last.latitude %>, lng: <%= Person.last.longitude %>};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
-            center: uluru
+            center: startingLocation
         });
 
         <% Person.all.each_with_index do |person, i| %>

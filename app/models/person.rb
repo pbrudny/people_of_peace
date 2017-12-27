@@ -38,10 +38,10 @@ class Person < ApplicationRecord
   end
 
   def marker_color
-    if coordinator_id.nil?
-      'green'
-    else
+    if coordinator
       'blue'
+    else
+      (created_at < 10.days.ago) ? 'red' : 'green'
     end
   end
 
