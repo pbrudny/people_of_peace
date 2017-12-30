@@ -16,21 +16,21 @@
             });
 
             var contentString<%= i %> = '<div id="content">'+
-                    '<div id="siteNotice">'+
-                            'Od: <%= person.added_by.try(:name) %> <%= time_ago_in_words(person.created_at) %> | Opieka: <%= person.coordinator.try(:name)%>'+
-                            '<%= link_to 'edytuj', edit_person_path(person) %>'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading"><%= person.name%></h1>'+
-                    '<div id="bodyContent">'+
-                    '<%= t(person.fellowship) %>'+
-                    '<ul>'+
-                    <% person.needs.each do |need| %>
-                            '<li><%= need %></li>'+
-                    <% end %>
-                            '</ul>'+
-                    '<span><%= person.note %></span>' +
-                    '</div>'+
-                    '</div>';
+                '<div id="siteNotice">'+
+                        'Od: <%= person.added_by.try(:name) %> <%= time_ago_in_words(person.created_at) %> | Opieka: <%= person.coordinator.try(:name)%>'+
+                        '<%= link_to ' edytuj', edit_person_path(person) %>'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading"><%= link_to person.name, person %></h1>'+
+                '<div id="bodyContent">'+
+                '<%= t(person.fellowship) %>'+
+                '<ul>'+
+                <% person.needs.each do |need| %>
+                        '<li><%= need %></li>'+
+                <% end %>
+                        '</ul>'+
+                '<span><%= person.note %></span>' +
+                '</div>'+
+                '</div>';
 
             var infowindow<%= i %> = new google.maps.InfoWindow({
                 content: contentString<%= i %>
@@ -92,10 +92,10 @@
         <td><%= person.fellowship %></td>
         <td><%= person.background %></td>
         <td><%= person.status %></td>
-        <td><%= person.added_by %></td>
-        <td><%= link_to 'Show', person %></td>
+        <td><%= person.user.try(:name) %></td>
+        <td><%= link_to t('show'), person %></td>
         <td><%= link_to t('edit'), edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('destroy'), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

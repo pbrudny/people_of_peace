@@ -31,7 +31,7 @@ class PeopleController < ApplicationController
   def update
     respond_to do |format|
       if @person.update(person_params)
-        format.html { redirect_to people_path, notice: 'Person was successfully updated.' }
+        format.html { redirect_to people_path, notice: t('person_updated') }
       else
         format.html { render :edit }
       end
@@ -41,8 +41,12 @@ class PeopleController < ApplicationController
   def destroy
     @person.destroy
     respond_to do |format|
-      format.html { redirect_to people_url, notice: 'Person was successfully destroyed.' }
+      format.html { redirect_to people_url, notice: t('person_destroyed') }
     end
+  end
+
+  def help
+
   end
 
   private
@@ -51,6 +55,27 @@ class PeopleController < ApplicationController
     end
 
     def person_params
-      params.require(:person).permit(:name, :email, :phone, :skype, :fb, :city, :note, :added_by, :fellowship, :need_gospel, :need_baptism, :need_healing, :need_deliverance, :need_holy_spirit, :need_bible_study, :remote_possible, :background, :status, :coordinator_id)
+      params.require(:person).permit(
+        :name,
+        :email,
+        :phone,
+        :skype,
+        :fb,
+        :city,
+        :note,
+        :added_by,
+        :fellowship,
+        :need_gospel,
+        :need_baptism,
+        :need_healing,
+        :need_deliverance,
+        :need_holy_spirit,
+        :need_bible_study,
+        :remote_possible,
+        :background,
+        :status,
+        :coordinator_id,
+        :user_id
+      )
     end
 end

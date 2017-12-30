@@ -83,6 +83,8 @@
     <%= f.select :priority, Person.priority_options %>
   </div>
 
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <hr />
   <h3>Dodatkowe uwagi</h3>
   <div class="note-area">
