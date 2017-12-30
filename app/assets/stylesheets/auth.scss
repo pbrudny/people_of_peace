@@ -8,20 +8,40 @@
   text-align: center;
 }
 
-.person-form {
-  border: solid 1px;
-  padding: 30px;
-  margin: 0 auto;
-  width: 80%;
+.auth-form {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
 
   .field {
-    padding-left: 30px;
-    padding-top: 10px;
+    margin-top: 1em;
+    margin-left: 30%;
     width: 100%;
   }
 
   .field input {
-    width: 40%;
+    height: 40px;
+    padding: 15px;
+  }
+
+  .checkbox {
+    margin-top: 1em;
+    margin-left: 30%;
+    width: 30%;
+  }
+
+  .checkbox input {
+    width: 10%;
+    padding: 5px;
+  }
+
+  .checkbox label {
     padding: 5px;
   }
 
@@ -44,6 +64,7 @@
   button, [type="submit"] {
     width: 40%;
     padding: 10px;
+    margin-top: 30px;
     margin-left: 30%;
     background-color: bisque;
   }
