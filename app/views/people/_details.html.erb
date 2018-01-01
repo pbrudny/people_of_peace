@@ -28,9 +28,9 @@
   <strong>Notka:</strong>
   <%= person.note %>
 </p> <% end %>
-<% if person.added_by %> <p>
+<% if person.user %> <p>
   <strong>Dodany przez:</strong>
-  <%= person.added_by %>
+  <%= person.user.try(:name) %>
 </p> <% end %>
 <% if person.fellowship %> <p>
   <strong>Wspólnota:</strong>

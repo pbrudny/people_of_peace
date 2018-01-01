@@ -5,12 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Coordinator.create([
-                       { name: 'Wojtek Radecki' },
-                       { name: 'Kamil Jakubowski' },
-                       { name: 'Sebastian Krok' },
-                       { name: 'Dawid Muszkiet' },
-                       { name: 'Edyta' },
-                       { name: 'Paweł Wróbel' },
-                       { name: 'Achim' },
-                   ])

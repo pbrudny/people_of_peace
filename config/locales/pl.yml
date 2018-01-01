@@ -40,7 +40,7 @@ pl:
   contact: 'Kontakt (E-mail, telefon, FB)'
   new_person: "Nowe zgłoszenie"
   person_created: "Zgłoszenie dodane!"
-  coordinator: "Koordynator"
+  coordinator: "Opiekun"
   added_by: "Zgłosił"
   people_of_peace: "Ludzie pokoju"
   back: "Powrót"
@@ -432,3 +432,4 @@ pl:
   person_updated: "Zaktualizowano zgłoszenie"
   skype: "Skype"
   facebook: "Facebook"
+  wanna_help: "Pomogę"

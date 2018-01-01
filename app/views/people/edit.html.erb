@@ -17,7 +17,7 @@
 
       <div class="field">
         <%= f.label :coordinator, t('coordinator') %>
-        <%= f.select :coordinator_id, Coordinator.options, include_blank: true %>
+        <%= f.select :coordinator_id, User.all.map { |u| [u.name, u.id] }, include_blank: true %>
       </div>
       <hr />
       <div class="field">

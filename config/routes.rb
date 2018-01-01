@@ -5,6 +5,5 @@ Rails.application.routes.draw do
       get 'help'
     end
   end
-  resources :coordinators
   root 'people#index'
 end

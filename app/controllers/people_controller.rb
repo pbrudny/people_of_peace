@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_person, only: [:show, :edit, :update, :destroy, :help]
 
   def index
     @people = Person.all
@@ -46,7 +46,8 @@ class PeopleController < ApplicationController
   end
 
   def help
-
+    @person.update_attribute(:coordinator_id, current_user.id)
+    redirect_to people_path, notice: t('person_updated')
   end
 
   private
@@ -63,7 +64,7 @@ class PeopleController < ApplicationController
         :fb,
         :city,
         :note,
-        :added_by,
+        :user_id,
         :fellowship,
         :need_gospel,
         :need_baptism,
@@ -73,9 +74,7 @@ class PeopleController < ApplicationController
         :need_bible_study,
         :remote_possible,
         :background,
-        :status,
-        :coordinator_id,
-        :user_id
+        :status
       )
     end
 end

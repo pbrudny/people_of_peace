@@ -1,6 +1,6 @@
 class Person < ApplicationRecord
-  belongs_to :user, optional: true
-  belongs_to :coordinator, optional: true
+  belongs_to :coordinator, optional: true, class_name: 'User'
+  belongs_to :user
 
   geocoded_by :city
   after_validation :geocode
