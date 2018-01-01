@@ -28,6 +28,7 @@
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+              <% if user_signed_in? %>
               <li class="nav-item">
                 <%= link_to new_person_path, class: 'nav-link' do %>
                     <i class="fa fa-plus-circle"></i>
@@ -40,6 +41,7 @@
                     Opiekunowie
                 <% end %>
               </li>
+              <% end %>
             </ul>
             <ul class="navbar-nav">
               <% if user_signed_in? %>
