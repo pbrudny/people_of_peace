@@ -34,6 +34,12 @@
                     Nowe zgłoszenie
                 <% end %>
               </li>
+              <li class="nav-item">
+                <%= link_to users_path, class: 'nav-link' do %>
+                    <i class="fa fa-users"></i>
+                    Opiekunowie
+                <% end %>
+              </li>
             </ul>
             <ul class="navbar-nav">
               <% if user_signed_in? %>

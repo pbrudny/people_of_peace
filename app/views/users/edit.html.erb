@@ -1,0 +1,7 @@
+<div class="person-form">
+  <h1>Edycja użytkownika</h1>
+
+  <%= render 'form', user: @user %>
+    <%= link_to t('show'), @user %> |
+    <%= link_to t('back'), users_path %>
+</div>

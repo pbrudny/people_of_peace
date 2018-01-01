@@ -1,7 +1,9 @@
 <div class="booyah-box">
     <p id="notice"><%= notice %></p>
     <%= render partial: 'details', locals: {person: @person} %>
-    <%= link_to t('wanna_help'), help_person_path(@person) %> |
+    <% if !@person.coordinator %>
+        <%= link_to t('wanna_help'), help_person_path(@person) %> |
+    <% end %>
     <%= link_to t('edit'), edit_person_path(@person) %> |
     <%= link_to t('back'), people_path %>
 </div>
