@@ -12,7 +12,6 @@
         var personOfPeace<%= i %> = {lat: <%= person.latitude %>, lng: <%= person.longitude %>};
         var marker<%= i %> = new google.maps.Marker({
             position: personOfPeace<%= i %>,
-            icon: "<%= asset_path(person.marker_icon) %>",
             map: map
         });
         <% end %>
