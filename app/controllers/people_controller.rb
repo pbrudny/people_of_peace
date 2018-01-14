@@ -19,7 +19,7 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
 
-    if People::AddPerson.new(person).call
+    if ::People::AddPerson.new(@person).call
       redirect_to people_path, notice: t('person_created')
     else
       render :new

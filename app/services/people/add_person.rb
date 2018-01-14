@@ -17,7 +17,7 @@ module People
 
     def notify_users
       User.all.each do |user|
-        UserMailer.deliver_new_person(user, person)
+        UserMailer.new_person(user, person).deliver_now
       end
     end
   end
