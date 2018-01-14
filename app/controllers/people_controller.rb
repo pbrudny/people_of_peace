@@ -19,12 +19,10 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
 
-    respond_to do |format|
-      if @person.save
-        format.html { redirect_to people_path, notice: t('person_created') }
-      else
-        format.html { render :new }
-      end
+    if People::AddPerson.new(person).call
+      redirect_to people_path, notice: t('person_created')
+    else
+      render :new
     end
   end
 
