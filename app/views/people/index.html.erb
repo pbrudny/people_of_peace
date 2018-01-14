@@ -93,8 +93,10 @@
             <td><%= person.user.try!(:name) %></td>
             <td><%= person.coordinator.try(:name) %></td>
             <td><%= link_to t('show'), person %></td>
-            <td><%= link_to t('edit'), edit_person_path(person) %></td>
-            <td><%= link_to t('destroy'), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% if current_user.admin || current_user.owner?(person) %>
+              <td><%= link_to t('edit'), edit_person_path(person) %></td>
+              <td><%= link_to t('destroy'), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

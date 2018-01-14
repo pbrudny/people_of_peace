@@ -4,6 +4,8 @@
     <% if !@person.coordinator %>
         <%= link_to t('wanna_help'), help_person_path(@person) %> |
     <% end %>
-    <%= link_to t('edit'), edit_person_path(@person) %> |
+      <% if current_user.admin || current_user.owner?(@person) %>
+        <%= link_to t('edit'), edit_person_path(@person) %>
+      |<% end %>
     <%= link_to t('back'), people_path %>
 </div>

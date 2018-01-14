@@ -26,8 +26,10 @@
         <td><%= user.fb %></td>
         <td><%= user.city %></td>
         <td><%= user.note %></td>
-        <td><%= link_to t('edit'), edit_user_path(user) %></td>
-        <td><%= link_to t('destroy'), user, method: :delete, data: { confirm: t('sure') } %></td>
+        <% if current_user.admin? || current_user == user %>
+          <td><%= link_to t('edit'), edit_user_path(user) %></td>
+          <td><%= link_to t('destroy'), user, method: :delete, data: { confirm: t('sure') } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
