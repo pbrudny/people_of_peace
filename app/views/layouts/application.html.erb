@@ -6,6 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="custom-js-google-map.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPLlS5IPr3SsP92xVQJwGa7GORtrdXBEo&callback=initMap">
+    </script>
     <style>
         #map {
             height: 400px;
