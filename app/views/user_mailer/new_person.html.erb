@@ -99,6 +99,11 @@
 <% if @person.user %>
     <p>
       <strong>Dodany przez:</strong>
-      <%= @person.user.try(:name) %>
+
+      <%= link_to(@person.user.name, @person, target: '_blank') %>
     </p>
 <% end %>
+
+<h2>
+  <%= link_to('Pomogę!', help_person_url(@person), target: '_blank') %>
+</h2>

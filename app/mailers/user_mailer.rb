@@ -1,22 +1,19 @@
 class UserMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.new_person.subject
-  #
   def new_person(user, person)
     @user = user
     @person = person
 
-    mail to: user.email, subject: 'Nowy człowiek pokoju'
+    mail to: user.email, subject: I18n.t('user_mailer.new_person.subject')
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.people_waiting.subject
-  #
+  def user_help(user, person)
+    @user = user
+    @person = person
+
+    mail to: user.email, subject: I18n.t('user_mailer.user_help.subject')
+  end
+
   def people_waiting
     @greeting = "Hi"
 

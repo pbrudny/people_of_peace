@@ -433,3 +433,10 @@ pl:
   skype: "Skype"
   facebook: "Facebook"
   wanna_help: "Pomogę"
+  user_mailer:
+    new_person:
+      subject: "Nowy człowiek pokoju"
+    user_help:
+      subject: "Znaleziono pomoc!"
+  person_help: "Pomoc zgłoszona. Dziękujemy!"
+  person_not_needed: "%{user_name} już zgłosił chęć pomocy."
