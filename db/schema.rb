@@ -15,20 +15,6 @@ ActiveRecord::Schema.define(version: 20171230145240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "skype"
-    t.string   "fb"
-    t.string   "address"
-    t.text     "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float    "longitude"
-    t.float    "latitude"
-  end
-
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -57,11 +43,10 @@ ActiveRecord::Schema.define(version: 20171230145240) do
     t.float    "longitude"
     t.float    "latitude"
     t.integer  "user_id"
-    t.index ["coordinator_id"], name: "index_people_on_coordinator_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email"
+    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -72,7 +57,6 @@ ActiveRecord::Schema.define(version: 20171230145240) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "login"
-    t.string   "password"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "city"

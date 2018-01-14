@@ -21,7 +21,7 @@ class CreatePeople < ActiveRecord::Migration[5.0]
       t.string :background
       t.string :status
       t.string :priority
-      t.belongs_to :coordinator, foreign_key: true
+      t.integer :coordinator_id, foreign_key: true
 
       t.timestamps
     end
