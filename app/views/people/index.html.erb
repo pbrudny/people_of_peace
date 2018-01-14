@@ -2,15 +2,38 @@
 <div id="map"></div>
 <script>
     function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
+        var startingLocation = {lat: <%= Person.last.try!(:latitude) %>, lng: <%= Person.last.try!(:longitude) %>};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
-            center: uluru
+            <%= Person.last ? 'center: startingLocation' : '' %>
         });
-        var marker = new google.maps.Marker({
-            position: uluru,
+        
+        <% User.all.each_with_index do |coordinator, i| %>
+        var supervisor<%= i %> = {lat: <%= coordinator.latitude %>, lng: <%= coordinator.longitude %>};
+        var markerCoo<%= i %> = new google.maps.Marker({
+            position: supervisor<%= i %>,
+            icon: "<%= asset_path('koordynator.png') %>",
             map: map
         });
+        var contentString2<%= i %> = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading"><%= coordinator.name%></h1>'+
+                '<div id="bodyContent">'+
+                '<p>Email: <%= coordinator.email %></p>' +
+                '<p>Tel. <%= coordinator.phone %></p>' +
+                '<p>FB: <%= coordinator.fb %></p>' +
+                '<p>Skype: <%= coordinator.skype %></p>' +
+                '<p>Adres: <%= coordinator.city %></p>' +
+                '</div>'+
+                '</div>';
+        var infowindow2<%= i %> = new google.maps.InfoWindow({
+            content: contentString2<%= i %>
+        });
+        markerCoo<%= i %>.addListener('click', function() {
+            infowindow2<%= i %>.open(map, markerCoo<%= i %>);
+        });
+        <% end %>
     }
 </script>
 
