@@ -15,10 +15,6 @@
             icon: "<%= asset_path(person.marker_icon) %>",
             map: map
         });
-       
-        marker<%= i %>.addListener('click', function() {
-            infowindow<%= i %>.open(map, marker<%= i %>);
-        });
         <% end %>
     }
 </script>
