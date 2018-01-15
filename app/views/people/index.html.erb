@@ -2,7 +2,6 @@
 <div id="map"></div>
 <script>
     function initMap() {
-        <% if Person.count > 0 %>
             var startingLocation = {lat: <%= Person.last.try!(:latitude) %>, lng: <%= Person.last.try!(:longitude) %>};
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
@@ -39,7 +38,6 @@
                 infowindow<%= i %>.open(map, marker<%= i %>);
             });
             <% end %>
-        <% end %>
         <% User.all.each_with_index do |coordinator, i| %>
         var supervisor<%= i %> = {lat: <%= coordinator.latitude %>, lng: <%= coordinator.longitude %>};
         var markerCoo<%= i %> = new google.maps.Marker({
