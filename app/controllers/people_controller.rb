@@ -62,6 +62,7 @@ class PeopleController < ApplicationController
         :name,
         :email,
         :phone,
+        :age,
         :skype,
         :fb,
         :contact,
