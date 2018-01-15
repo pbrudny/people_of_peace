@@ -64,6 +64,7 @@ class PeopleController < ApplicationController
         :phone,
         :skype,
         :fb,
+        :contact,
         :city,
         :note,
         :user_id,
