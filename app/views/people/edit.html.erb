@@ -7,7 +7,7 @@
           <div id="error_explanation">
             <p class="alert alert-danger">Uzupełnij brakujące informacje</p>
             <ul>
-              <% person.errors.messages.values.each do |message| %>
+              <% @person.errors.messages.values.each do |message| %>
                   <% message.each do  |m| %>
                       <li><%= m %></li>
                   <%end %>
