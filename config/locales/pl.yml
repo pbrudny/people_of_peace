@@ -469,3 +469,4 @@ pl:
   city_or_address: "Adres zamieszkania (przynajmniej miasto)"
   user:
     updated: "Zaktualizowano dane"
+  users: "Koordynatorzy (opiekunowie)"
