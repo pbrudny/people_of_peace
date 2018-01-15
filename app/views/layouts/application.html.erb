@@ -40,13 +40,14 @@
                     Opiekunowie
                 <% end %>
               </li>
+              <% end %>
               <li class="nav-item">
                 <%= link_to about_path, class: 'nav-link' do %>
-                    <i class="fa fa-question"></i>
-                    Jak to działa
+                    <i class="fa fa-question-circle"></i>
+                    Jak to działa?
                 <% end %>
               </li>
-              <% end %>
+
             </ul>
             <ul class="navbar-nav">
               <% if user_signed_in? %>
