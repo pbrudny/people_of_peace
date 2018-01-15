@@ -4,14 +4,25 @@
   <%= person.name %>
 </p>
 <% end %>
+
+<% if person.age %>
+<p>
+  <strong>Wiek:</strong>
+  <%= person.age %>
+</p>
+<% end %>
+
 <% if person.email %> <p>
   <strong>Email:</strong>
   <%= person.email %>
-</p> <% end %>
-<% if person.phone %> <p>
-  <strong>Telefon:</strong>
-  <%= person.phone %>
-</p> <% end %>
+</p>
+<% end %>
+<% if person.phone %>
+    <p>
+    <strong>Telefon:</strong>
+    <%= person.phone %>
+    </p>
+<% end %>
 <% if person.skype %> <p>
   <strong>Skype:</strong>
   <%= person.skype %>

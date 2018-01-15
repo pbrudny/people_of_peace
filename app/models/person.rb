@@ -5,11 +5,16 @@ class Person < ApplicationRecord
   geocoded_by :city
   after_validation :geocode
 
-  validates :name, presence: true
-  validates :city, presence: true
+  validates :name, presence: { message: I18n.t('activerecord.errors.models.person.attributes.name.blank') }
+  validates :city, presence: { message: I18n.t('activerecord.errors.models.person.attributes.city.blank') }
+  validates :contact, presence: { message: I18n.t('activerecord.errors.models.person.attributes.contact.blank') }
 
   def self.background_options
     ['Zwyczajny', 'New age', 'Metal', 'rozwój osobisty', 'okultyzm i magia', 'uzależnienie', 'nie wiem']
+  end
+
+  def self.age_options
+    ['dziecko', 'nastolatek', '20+', '30+', '40+', '50+', '60+', '70+', 'nie wiem']
   end
 
   def self.fellowship_options

@@ -3,12 +3,13 @@
 <%= form_for(person) do |f| %>
   <% if person.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
-
+      <p class="alert alert-danger">Uzupełnij brakujące informacje</p>
       <ul>
-      <% person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <% person.errors.messages.values.each do |message| %>
+            <% message.each do  |m| %>
+                <li><%= m %></li>
+            <%end %>
+          <% end %>
       </ul>
     </div>
   <% end %>
@@ -22,6 +23,10 @@
     <%= f.label :city, t('city') %>
     <%= f.text_field :city %>
   </div>
+  <div class="field">
+    <%= f.label :age, t('age') %>
+    <%= f.select :age, Person.age_options, include_blank: true %>
+  </div>
 
   <div class="field">
     <%= f.label :source, t('source') %>
@@ -31,6 +36,11 @@
   <div class="field">
     <%= f.label :fellowship, t('fellowship') %>
     <%= f.select :fellowship, Person.fellowship_options %>
+  </div>
+
+  <div class="field">
+    <%= f.label :background, t('background') %>
+    <%= f.select :background, Person.background_options %>
   </div>
 
   <div class="field">
@@ -66,11 +76,6 @@
   <div class="field">
     <%= f.label :remote_possible, t('remote_possible') %>
     <%= f.check_box :remote_possible %>
-  </div>
-
-  <div class="field">
-    <%= f.label :background, :background %>
-    <%= f.select :background, Person.background_options %>
   </div>
 
   <div class="field">

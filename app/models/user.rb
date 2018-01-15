@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :city, presence: true
+  validates :email, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,5 +15,9 @@ class User < ApplicationRecord
 
   def owner?(person)
     person.coordinator == self
+  end
+
+  def self.device_options
+    ['komputer', 'telefon']
   end
 end

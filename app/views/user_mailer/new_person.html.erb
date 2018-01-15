@@ -6,6 +6,13 @@
       <%= link_to(@person.name, @person, target: '_blank') %>
     </p>
 <% end %>
+<% if @person.age %>
+    <p>
+      <strong>Wiek:</strong>
+      <%= @person.age %>
+    </p>
+<% end %>
+
 <% if @person.email %>
     <p>
       <strong>E-mail:</strong>

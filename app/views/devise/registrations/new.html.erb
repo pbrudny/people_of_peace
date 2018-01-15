@@ -21,23 +21,27 @@
   </div>
 
   <div class="field">
-    <%= f.text_field :phone, placeholder: t('phone') %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :skype, placeholder: t('skype') %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :fb, placeholder: t('facebook') %>
-  </div>
-
-  <div class="field">
     <%= f.text_field :city, placeholder: t('city') %>
   </div>
 
   <div class="field">
-    <%= f.text_field :note, placeholder: t('note') %>
+    <%= f.text_field :phone, placeholder: t('phone') %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :skype, placeholder: t('skype_optional') %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :fb, placeholder: t('facebook_optional') %>
+  </div>
+
+  <div class="field">
+    <%= f.select :device, User.device_options, prompt: 'Zwykle internet przeglądam przez:' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :note, placeholder: t('note_optional') %>
   </div>
 
   <div class="actions">

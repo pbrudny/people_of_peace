@@ -32,7 +32,7 @@ pl:
   city: "Miasto"
   phone: "Telefon"
   email: "E-mail"
-  name: "Imię"
+  name: "Imię i nazwisko"
   note: "Notatka"
   priority: "Tryb"
   send: "Wyślij zgłoszenie"
@@ -80,6 +80,26 @@ pl:
     models:
       user: Użytkownik
     errors:
+      models:
+        person:
+          attributes:
+            city:
+              blank: 'miasto'
+            name:
+              blank: 'imię i nazwisko'
+            contact:
+              blank: 'kontakt'
+        user:
+          attributes:
+            city:
+              blank: 'miasto'
+            name:
+              blank: 'imię i nazwisko'
+            email:
+              blank: 'email'
+            password:
+              blank: 'hasło'
+
       messages:
         record_invalid: 'Negatywne sprawdzenie poprawności: %{errors}'
         restrict_dependent_destroy:
@@ -440,3 +460,8 @@ pl:
       subject: "Znaleziono pomoc!"
   person_help: "Pomoc zgłoszona. Dziękujemy!"
   person_not_needed: "%{user_name} już zgłosił chęć pomocy."
+  age: "Wiek"
+  skype_optional: "Skype (opcjonalnie)"
+  facebook_optional: "Facebook (opcjonalnie)"
+  note_optional: "Notatka (opcjonalnie)"
+  background: "Background"

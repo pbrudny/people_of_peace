@@ -48,7 +48,7 @@ class PeopleController < ApplicationController
       @person.update_attribute(:coordinator_id, current_user.id)
       redirect_to people_path, notice: t('person_help')
     else
-      redirect_to people_path, notice: t('person_not_needed', user_name: @person.coordinator.name)
+      redirect_to people_path, alert: t('person_not_needed', user_name: @person.coordinator.name)
     end
   end
 

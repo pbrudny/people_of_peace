@@ -1,12 +1,13 @@
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+      <p class="alert alert-danger">Uzupełnij brakujące informacje</p>
       <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% user.errors.messages.values.each do |message| %>
+            <% message.each do  |m| %>
+                <li><%= m %></li>
+            <%end %>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -23,20 +24,24 @@
     <%= f.text_field :phone, placeholder: t('phone') %>
   </div>
 
+    <div class="field">
+      <%= f.text_field :city, placeholder: t('city') %>
+    </div>
+
+    <div class="field">
+    <%= f.text_field :skype, placeholder: t('skype_optional') %>
+    </div>
+
   <div class="field">
-    <%= f.text_field :skype, placeholder: t('skype') %>
+    <%= f.text_field :fb, placeholder: t('facebook_optional') %>
   </div>
 
   <div class="field">
-    <%= f.text_field :fb, placeholder: 'fb' %>
+    <%= f.select :device, User.device_options %>
   </div>
 
   <div class="field">
-    <%= f.text_field :city, placeholder: t('city') %>
-  </div>
-
-  <div class="field">
-    <%= f.text_area :note, placeholder: t('note') %>
+    <%= f.text_area :note, placeholder: t('note_optional') %>
   </div>
 
   <div class="actions">
