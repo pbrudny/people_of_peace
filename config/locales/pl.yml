@@ -470,3 +470,4 @@ pl:
   user:
     updated: "Zaktualizowano dane"
   users: "Koordynatorzy (opiekunowie)"
+  display: "Widoczny na mapie"
