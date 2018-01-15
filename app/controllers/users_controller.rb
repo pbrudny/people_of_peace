@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params.merge(display: true, notify: true))
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
