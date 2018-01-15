@@ -16,7 +16,7 @@ module People
     attr_accessor :person
 
     def notify_users
-      User.all.each do |user|
+      User.where(notify: true).each do |user|
         UserMailer.new_person(user, person).deliver_now
       end
     end
