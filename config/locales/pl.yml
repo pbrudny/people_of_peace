@@ -466,3 +466,4 @@ pl:
   note_optional: "Notatka (opcjonalnie)"
   background: "Background"
   notify: "Dostaje powiadomienia"
+  city_or_address: "Adres zamieszkania (przynajmniej miasto)"
