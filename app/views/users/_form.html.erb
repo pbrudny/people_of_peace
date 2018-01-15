@@ -44,6 +44,11 @@
     <%= f.text_area :note, placeholder: t('note_optional') %>
   </div>
 
+  <div class="field">
+    <%= f.label :notify, t('notify') %>
+    <%= f.check_box :notify %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

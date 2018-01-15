@@ -465,3 +465,4 @@ pl:
   facebook_optional: "Facebook (opcjonalnie)"
   note_optional: "Notatka (opcjonalnie)"
   background: "Background"
+  notify: "Dostaje powiadomienia"
