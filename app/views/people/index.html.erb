@@ -2,42 +2,42 @@
 <div id="map"></div>
 <script>
     function initMap() {
-            var startingLocation = {lat: <%= Person.last.try!(:latitude) %>, lng: <%= Person.last.try!(:longitude) %>};
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                <%= Person.last ? 'center: startingLocation' : '' %>
-            });
-            <% Person.all.each_with_index do |person, i| %>
-            var personOfPeace<%= i %> = {lat: <%= person.latitude %>, lng: <%= person.longitude %>};
-            var marker<%= i %> = new google.maps.Marker({
-                position: personOfPeace<%= i %>,
-                icon: "<%= asset_path(person.marker_icon) %>",
-                map: map
-            });
-            var contentString<%= i %> = '<div id="content">'+
-                    '<div id="siteNotice">'+
-                    'Od <%= person.user.try(:name) %> <%= time_ago_in_words(person.created_at) %> | '+
-                    'Opieka: <%= person.coordinator.try(:name)%>'+
-                    '<%= link_to(' pomogę', help_person_path(person)) if !person.coordinator %>'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading"><%= link_to person.name, person %></h1>'+
-                    '<div id="bodyContent">'+
-                    '<%= t(person.fellowship) %>'+
-                    '<ul>'+
-                    <% person.needs.each do |need| %>
-                    '<li><%= need %></li>'+
-                    <% end %>
-                    '</ul>'+
-                    '<span><%= person.note %></span>' +
-                    '</div>'+
-                    '</div>';
-            var infowindow<%= i %> = new google.maps.InfoWindow({
-                content: contentString<%= i %>
-            });
-            marker<%= i %>.addListener('click', function() {
-                infowindow<%= i %>.open(map, marker<%= i %>);
-            });
-            <% end %>
+        var startingLocation = {lat: <%= Person.last.try!(:latitude) %>, lng: <%= Person.last.try!(:longitude) %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            <%= Person.last ? 'center: startingLocation' : '' %>
+        });
+        <% Person.all.each_with_index do |person, i| %>
+        var personOfPeace<%= i %> = {lat: <%= person.latitude %>, lng: <%= person.longitude %>};
+        var marker<%= i %> = new google.maps.Marker({
+            position: personOfPeace<%= i %>,
+            icon: "<%= asset_path(person.marker_icon) %>",
+            map: map
+        });
+        var contentString<%= i %> = '<div id="content">'+
+                '<div id="siteNotice">'+
+                'Od <%= person.user.try(:name) %> <%= time_ago_in_words(person.created_at) %> | '+
+                'Opieka: <%= person.coordinator.try(:name)%>'+
+                '<%= link_to(' pomogę', help_person_path(person)) if !person.coordinator %>'+
+                '</div>'+
+                '<h1 id="firstHeading" class="firstHeading"><%= link_to person.name, person %></h1>'+
+                '<div id="bodyContent">'+
+                '<%= t(person.fellowship) %>'+
+                '<ul>'+
+                <% person.needs.each do |need| %>
+                '<li><%= need %></li>'+
+                <% end %>
+                '</ul>'+
+                '<span><%= person.note %></span>' +
+                '</div>'+
+                '</div>';
+        var infowindow<%= i %> = new google.maps.InfoWindow({
+            content: contentString<%= i %>
+        });
+        marker<%= i %>.addListener('click', function() {
+            infowindow<%= i %>.open(map, marker<%= i %>);
+        });
+        <% end %>
         <% User.all.each_with_index do |coordinator, i| %>
         var supervisor<%= i %> = {lat: <%= coordinator.latitude %>, lng: <%= coordinator.longitude %>};
         var markerCoo<%= i %> = new google.maps.Marker({
