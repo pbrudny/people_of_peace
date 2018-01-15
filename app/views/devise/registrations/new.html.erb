@@ -1,6 +1,6 @@
 <div class="auth-form">
-  <h1>Rejestracja</h1>
-
+  <h1>Rejestracja koordynatora</h1>
+  <h4 class="subtitle">(np. lidera kościoła domowego)</h4>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -36,9 +36,9 @@
     <%= f.text_field :fb, placeholder: t('facebook_optional') %>
   </div>
 
-  <!--<div class="field">-->
-    <!--<%= f.select :device, User.device_options, prompt: 'Zwykle internet przeglądam przez:' %>-->
-  <!--</div>-->
+  <div class="field">
+    <%= f.select :device, User.device_options, prompt: 'Zwykle internet przeglądam przez:' %>
+  </div>
 
   <div class="field">
     <%= f.text_field :note, placeholder: t('note_optional') %>
