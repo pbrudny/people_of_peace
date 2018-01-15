@@ -38,7 +38,7 @@
             infowindow<%= i %>.open(map, marker<%= i %>);
         });
         <% end %>
-        <% User.all.each_with_index do |coordinator, i| %>
+        <% User.where(display: true).each_with_index do |coordinator, i| %>
         var supervisor<%= i %> = {lat: <%= coordinator.latitude %>, lng: <%= coordinator.longitude %>};
         var markerCoo<%= i %> = new google.maps.Marker({
             position: supervisor<%= i %>,
