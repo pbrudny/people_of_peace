@@ -7,7 +7,7 @@
             zoom: 4,
             <%= Person.last ? 'center: startingLocation' : '' %>
         });
-        <% Person.all.each_with_index do |person, i| %>
+        <% Person.where(display: true).each_with_index do |person, i| %>
         var personOfPeace<%= i %> = {lat: <%= person.latitude %>, lng: <%= person.longitude %>};
         var marker<%= i %> = new google.maps.Marker({
             position: personOfPeace<%= i %>,
