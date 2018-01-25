@@ -28,7 +28,7 @@
                 '<li><%= need %></li>'+
                 <% end %>
                 '</ul>'+
-                '<span><%= person.note %></span>' +
+                '<span><%= person.note.split[0..10].join(' ') %>...<%= link_to '[więcej]', person %></span>' +
                 '</div>'+
                 '</div>';
         var infowindow<%= i %> = new google.maps.InfoWindow({
