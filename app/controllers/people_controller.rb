@@ -78,7 +78,8 @@ class PeopleController < ApplicationController
         :need_bible_study,
         :remote_possible,
         :background,
-        :status
+        :status,
+        :coordinator_id
       )
     end
 end

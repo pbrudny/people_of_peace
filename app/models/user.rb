@@ -14,7 +14,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def owner?(person)
-    person.coordinator == self
+    person.user == self
   end
 
   def self.device_options
