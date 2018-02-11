@@ -466,7 +466,7 @@ pl:
   note_optional: "Notatka (opcjonalnie)"
   background: "Background"
   notify: "Dostaje powiadomienia"
-  city_or_address: "Adres zamieszkania (przynajmniej miasto)"
+  city_or_address: "Adres zamieszkania"
   user:
     updated: "Zaktualizowano dane"
   users: "Koordynatorzy (opiekunowie)"
