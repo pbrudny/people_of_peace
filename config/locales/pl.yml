@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 pl:
+  person_added: "Zgłoszono"
   fellowship: "Doświadczenia z kościołem"
   need_gospel: "Chce usłyszeć Ewangelię"
   need_baptism: "Chce chrztu wodnego"

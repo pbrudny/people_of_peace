@@ -84,3 +84,7 @@
   <strong>Coordinator:</strong>
   <%= person.coordinator.try :name %>
 </p> <% end %>
+<p>
+  <strong><%= t('person_added') %>:</strong>
+  <%= time_ago_in_words(person.created_at) %> temu
+</p>
