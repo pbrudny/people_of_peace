@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :people
+  has_many :disciples, class_name: 'Person', foreign_key: :coordinator_id
 
   geocoded_by :city
   after_validation :geocode
@@ -14,7 +15,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def owner?(person)
-    person.user == self
+    person.user == self || person.coordinator == self
   end
 
   def self.device_options

@@ -3,7 +3,9 @@ class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy, :help]
 
   def index
-    @people = Person.all
+    @added_by_you = current_user.people
+    @disciples = current_user.disciples
+    @people_free = Person.free
   end
 
   def show
