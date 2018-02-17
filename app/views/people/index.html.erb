@@ -102,7 +102,7 @@
   <div class="row">
     <div class="col-sm">
       <div class="booyah-box">
-        <h3>Zgłosiłeś</h3>
+        <h3>Zgłosiłeś <i class='fa fa-drivers-license-o' ></i></h3>
         <table class="table table-hover">
           <tbody>
           <% @added_by_you.each do |person| %>
@@ -119,24 +119,7 @@
     </div>
     <div class="col-sm">
       <div class="booyah-box">
-        <h3>Opiekujesz się</h3>
-      <table class="table table-hover">
-        <tbody>
-        <% @disciples.each do |person| %>
-          <tr>
-            <td><%= link_to "#{person.name} (#{person.city})", person %></td>
-            <% if current_user.admin || current_user.owner?(person) %>
-              <td><%= link_to t('edit'), edit_person_path(person) %></td>
-            <% end %>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="booyah-box">
-        <h3>Bez opiekunów</h3>
+        <h3>Bez opiekunów <i class='fa fa-child' ></i></h3>
         <table class="table table-hover">
           <tbody>
           <% @people_free.each do |person| %>
@@ -149,6 +132,23 @@
           <% end %>
           </tbody>
         </table>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="booyah-box">
+        <h3>Opiekujesz się <i class='fa fa-handshake-o' ></i></h3>
+      <table class="table table-hover">
+        <tbody>
+        <% @disciples.each do |person| %>
+          <tr>
+            <td><%= link_to "#{person.name} (#{person.city})", person %></td>
+            <% if current_user.admin || current_user.owner?(person) %>
+              <td><%= link_to t('edit'), edit_person_path(person) %></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
       </div>
     </div>
   </div>

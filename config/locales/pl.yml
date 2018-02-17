@@ -41,7 +41,7 @@ pl:
   new_person: "Nowe zgłoszenie"
   person_created: "Zgłoszenie dodane!"
   coordinator: "Opiekun"
-  added_by: "Zgłosił"
+  added_by: "Od"
   people_of_peace: "Ludzie pokoju"
   back: "Powrót"
   edit_person: "Edycja zgłoszenia"
