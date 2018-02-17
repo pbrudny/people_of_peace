@@ -33,6 +33,13 @@
     <strong><%= t('note') %>:</strong>
     <%= @user.note %>
   </p>
+
+  <p>
+    <strong>
+      <%= t('notify') %>
+    </strong>
+    <%= bell(user.notify) %>
+  </p>
 </div>
 
 <% if current_user.admin || current_user == @user %>
