@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Overpass');
+@import url('https://fonts.googleapis.com/css?family=Lato:extended');
 @import "font-awesome";
 @import "people";
 @import "auth";
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6{
 
 body {
   background: image_url('naturalwhite.png');
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-family: Lato, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
 }
 
 .navbar{
@@ -161,3 +161,14 @@ h2 {
 .alert {
   margin-top: 1rem;
 }
+
+@media (max-width: 991px) {
+  h1 {
+    text-align: center;
+  }
+}
+.table{
+  thead th, td {
+    vertical-align: middle
+  }
+} 

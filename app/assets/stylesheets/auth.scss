@@ -5,10 +5,17 @@
 .form-title {
   padding-top: 30px;
   padding-bottom: 15px;
-  text-align: center;
 }
-
+select {
+  @extend .form-control;
+  display: initial;
+}
+[type="checkbox"] {
+  height: 16px;
+  vertical-align: middle;
+}
 .auth-form {
+  text-align: center;
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -20,22 +27,17 @@
   padding: 20px;
 
   h1 {
-    margin-left: 30%;
     margin-bottom: 15px;
   }
 
-  a {
-    margin-left: 30%;
-  }
 
   .subtitle {
-    padding-left: 30%;
+    // padding-left: 30%;
     padding-bottom: 1em;
   }
 
-  .field {
-    margin-top: 1em;
-    margin-left: 30%;
+  .actions, .field {
+    margin: 1em 0;
     width: 100%;
   }
 
@@ -46,7 +48,6 @@
 
   .checkbox {
     margin-top: 1em;
-    margin-left: 30%;
     width: 30%;
   }
 
@@ -63,9 +64,11 @@
     width: 250px;
   }
 
-  input, button, select {
-    width: 40%;
-  }
+  // input, button, select {
+  //   width: 40%;
+  // }
+
+
 
   textarea {
     width: 100%;
@@ -74,13 +77,79 @@
 
   .note-area {
   }
-
-  button, [type="submit"] {
-    width: 40%;
-    padding: 10px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    margin-left: 30%;
-    background-color: bisque;
-  }
 }
+@media (max-width: 991px) {
+
+  .auth-form {
+    .field, .actions {
+      width: initial;
+      margin-left: 0;
+    }
+  }
+
+  .auth-form h1 {
+      margin: 0;
+  }
+  
+
+  .auth-form .field input, .auth-form .field select {
+      padding-left: 0;
+      display: block;
+      margin: auto;
+      width: 100%;
+      padding: 5px;
+  }
+  .auth-form .checkbox {
+      margin-left: 0;
+      width: initial;
+      margin-bottom: 10px;
+  }
+  
+  .auth-form .checkbox input {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+  }
+  .auth-form .checkbox label {
+      vertical-align: middle;
+      margin-bottom: 0;
+  }
+  
+  .auth-form button, .auth-form [type="submit"] {
+      display: block;
+      margin: auto;
+      width: 100%;
+  }
+  .auth-form a {
+      margin: 0;
+  }
+  
+  }
+  @media (min-width: 992px) {
+    .actions {
+      .btn-primary {
+        width: 40%;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+    .field {
+      .form-control, .auth-form select {
+        width: 40%;
+        margin: auto;
+      }
+    }
+    .checkbox {
+      width: 40%;
+      margin: auto;
+      input {
+        height: 16px;
+        vertical-align: middle;
+      }
+       label {
+        vertical-align: middle;
+        margin-bottom: 0;
+      }
+    }
+  }
+  

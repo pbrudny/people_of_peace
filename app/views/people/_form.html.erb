@@ -16,12 +16,12 @@
 
   <div class="field">
     <%= f.label :name, t('name') %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :city, t('city') %>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, :class => 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :age, t('age') %>
@@ -80,7 +80,7 @@
 
   <div class="field">
     <%= f.label :contact, t('contact') %>
-    <%= f.text_field :contact %>
+    <%= f.text_field :contact, :class => 'form-control' %>
   </div>
 
   <div class="field">
@@ -93,11 +93,11 @@
   <hr />
   <h3>Dodatkowe uwagi</h3>
   <div class="note-area">
-    <%= f.text_area :note %>
+    <%= f.text_area :note, :class => 'form-control' %>
   </div>
       <hr />
   <div class="actions">
-    <%= f.submit t('send') %>
+    <%= f.submit t('send'), :class => 'btn btn-primary' %>
   </div>
 <% end %>
 </div>
