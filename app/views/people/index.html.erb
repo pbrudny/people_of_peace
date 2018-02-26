@@ -118,13 +118,17 @@
       <div class="booyah-box">
         <h3>Bez opiekunów <i class='fa fa-child' ></i></h3>
         <table class="table table-hover">
+          <thead>
+            <th><%= t('who') %></th>
+            <th><%= t('from_where') %></th>
+            <th><%= t('added_by') %></th>
+          </thead>
           <tbody>
           <% @people_free.each do |person| %>
             <tr>
-              <td><%= person.name %></td>
+              <td><%= link_to person.name, person %></td>
               <td><%= person.city %></td>
-              <td><%= t('added_by') %>: <%= link_to person.user.try!(:name), person.user %></td>
-              <td><%= link_to t('show'), person %></td>
+              <td><%= link_to person.user.try!(:name), person.user %></td>
             </tr>
           <% end %>
           </tbody>

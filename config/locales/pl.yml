@@ -476,5 +476,6 @@ pl:
     updated: "Zaktualizowano dane"
   users: "Koordynatorzy (opiekunowie)"
   display: "Widoczny na mapie"
-  login_numbers: "logowania"
-  who: "kto"
+  login_numbers: "Liczba logowań"
+  who: "Kto"
+  from_where: "Skąd"
