@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   end
 
   def new_user(user, new_user)
-    @user = user
+    @user = new_user
 
     mail to: user.email, subject: I18n.t('user_mailer.new_user.subject')
   end
