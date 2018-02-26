@@ -13,13 +13,15 @@
 <ul>
   <% @people_free.each do |person| %>
     <p>
-      <li>
+      <h3>
         <strong>
           <%= link_to("#{person.name} (#{person.city})", person, target: '_blank') %>
         </strong>
-      </li>
+      </h3>
     </p>
-    <%= render partial: 'needs', locals: { person: person } %>
+    <p>
+      <%= render partial: 'needs', locals: { person: person } %>
+    </p>
     <br />
   <% end %>
 </ul>
