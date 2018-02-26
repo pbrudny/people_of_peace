@@ -47,7 +47,7 @@ class PeopleController < ApplicationController
 
   def help
     if @person.coordinator_id.nil?
-      @person.update_attribute(:coordinator_id, current_user.id)
+      ::People::HelpPerson.new(@person, current_user).call
       redirect_to people_path, notice: t('person_help')
     else
       redirect_to people_path, alert: t('person_not_needed', user_name: @person.coordinator.name)
@@ -69,6 +69,7 @@ class PeopleController < ApplicationController
         :fb,
         :contact,
         :city,
+        :source,
         :note,
         :user_id,
         :fellowship,

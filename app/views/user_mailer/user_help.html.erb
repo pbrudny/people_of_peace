@@ -7,3 +7,19 @@
 <p>
   Dziękujemy!
 </p>
+  <hr />
+  <h2>Pozostali ludzie pokoju bez opieki: </h2>
+
+<ul>
+  <% @people_free.each do |person| %>
+    <p>
+      <li>
+        <strong>
+          <%= link_to("#{person.name} (#{person.city})", person, target: '_blank') %>
+        </strong>
+      </li>
+    </p>
+    <%= render partial: 'needs', locals: { person: person } %>
+    <br />
+  <% end %>
+</ul>

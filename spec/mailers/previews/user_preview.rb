@@ -10,7 +10,11 @@ class UserPreview < ActionMailer::Preview
   end
 
   def people_waiting
-    UserMailer.people_waiting
+    UserMailer.people_waiting(User.last)
+  end
+
+  def new_user
+    UserMailer.new_user(User.first, User.last)
   end
 
 end

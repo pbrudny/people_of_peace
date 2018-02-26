@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :questions
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users, only: [:index, :edit, :update, :show, :destroy]
 

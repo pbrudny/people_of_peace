@@ -43,10 +43,20 @@
   <strong>Notka:</strong>
   <%= person.note %>
 </p> <% end %>
-<% if person.user %> <p>
-  <strong>Dodany przez:</strong>
-  <%= person.user.try(:name) %>
-</p> <% end %>
+<% if person.user %>
+  <p>
+    <strong>Dodany przez:</strong>
+    <%= person.user.try(:name) %>
+  </p>
+<% end %>
+
+<% if person.source %>
+  <p>
+    <strong>Jak trafił:</strong>
+    <%= person.try(:source) %>
+  </p>
+<% end %>
+
 <% if person.fellowship %> <p>
   <strong>Wspólnota:</strong>
   <%= person.fellowship %>

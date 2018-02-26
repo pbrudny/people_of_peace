@@ -1,5 +1,23 @@
-<h1>User#people_waiting</h1>
+Hej
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/people_waiting.html.erb
-</p>
+<p>Ciągle nie mamy opiekunów dla: </p>
+
+<ul>
+  <% @people_free.each do |person| %>
+    <p>
+    <li>
+      <strong>
+        <%= link_to("#{person.name} (#{person.city})", person, target: '_blank') %>
+      </strong>
+    </li>
+    </p>
+    <%= render partial: 'needs', locals: { person: person } %>
+    <br />
+  <% end %>
+</ul>
+
+<p>Kliknij na imię by przejść do serwisu <%= link_to 'ludziepokoju.pl', root_url %> i zobaczyć więcej szczegółow. </p>
+
+Pozdrowienia,
+<br />
+Piotrek :)

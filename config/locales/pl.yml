@@ -98,6 +98,7 @@ pl:
               blank: 'imię i nazwisko'
             email:
               blank: 'email'
+              taken: 'zajęty'
             password:
               blank: 'hasło'
 
@@ -459,6 +460,9 @@ pl:
       subject: "Nowy człowiek pokoju"
     user_help:
       subject: "Znaleziono pomoc!"
+      people_waiting: "Ludzie pokoju bez opiekunów!"
+    new_user:
+      subject: "Mamy nowego opiekuna :)"
   person_help: "Pomoc zgłoszona. Dziękujemy!"
   person_not_needed: "%{user_name} już zgłosił chęć pomocy."
   age: "Wiek"
