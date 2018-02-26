@@ -120,15 +120,15 @@
         <table class="table table-hover">
           <thead>
             <th><%= t('who') %></th>
-            <th><%= t('from_where') %></th>
             <th><%= t('added_by') %></th>
+            <th><%= t('waiting_time') %></th>
           </thead>
           <tbody>
           <% @people_free.each do |person| %>
             <tr>
-              <td><%= link_to person.name, person %></td>
-              <td><%= person.city %></td>
+              <td><%= link_to "#{person.name} (#{person.city})", person %></td>
               <td><%= link_to person.user.try!(:name), person.user %></td>
+              <td><%= time_ago_in_words(person.created_at) %> <%= t('ago')%></td>
             </tr>
           <% end %>
           </tbody>

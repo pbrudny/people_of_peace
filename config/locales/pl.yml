@@ -479,3 +479,5 @@ pl:
   login_numbers: "Liczba logowań"
   who: "Kto"
   from_where: "Skąd"
+  ago: "temu"
+  waiting_time: "Czas dodania"
