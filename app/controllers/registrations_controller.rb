@@ -4,6 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
     User.where(notify: true).each do |user|
       UserMailer.new_user(user, resource).deliver_now
     end
+    people_path
   end
 
   private
