@@ -3,6 +3,7 @@ FactoryBot.define do
     name 'Tomek Gruszka'
     city 'Kęty'
     source nil
+    user
     note 'Bardzo otwarty'
     fellowship 'katolik negatywnie nastawiony do katolicyzmu'
     need_gospel false
@@ -15,5 +16,6 @@ FactoryBot.define do
     background 'Zwyczajny'
     longitude 19.2228003
     latitude 49.8807299
+    contact '60959201532'
   end
 end

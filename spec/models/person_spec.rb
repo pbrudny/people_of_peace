@@ -8,13 +8,13 @@ RSpec.describe Person, type: :model do
     end
 
     context 'Needs baptism - has coordinator' do
-      let(:coordinator) { create(:coordinator) }
-      let(:person) { create(:person, need_baptism: true, coordinator: coordinator) }
+      let(:user) { create(:user) }
+      let(:person) { create(:person, need_baptism: true, coordinator: user) }
       it { expect(person.marker_icon).to eq 'blue_MarkerC.png' }
     end
 
     context 'Needs baptism - no coordinator more than 10 days' do
-      let(:coordinator) { create(:coordinator) }
+      let(:user) { create(:user) }
       let!(:person) { create(:person, need_baptism: true) }
 
       it do
