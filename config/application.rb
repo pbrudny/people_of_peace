@@ -14,5 +14,10 @@ module PeopleOfPeace
     config.i18n.default_locale = :pl
     config.paths.add File.join('app', 'services'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'services', '*')]
+
+    Raven.configure do |config|
+      config.dsn = ENV['SENTRY_ID']
+      config.environments = ['staging', 'production']
+    end
   end
 end
