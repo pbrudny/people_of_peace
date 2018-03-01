@@ -16,7 +16,7 @@ module PeopleOfPeace
     config.autoload_paths += Dir[Rails.root.join('app', 'services', '*')]
 
     Raven.configure do |config|
-      config.dsn = ENV['SENTRY_ID']
+      config.dsn = 'https://fbcd1836ff124166b84f786b3fa05215:bf68c58b85a340979c0482d47be22aa5@sentry.io/296865'
       config.environments = ['staging', 'production']
     end
   end
