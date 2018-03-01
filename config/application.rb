@@ -19,7 +19,7 @@ module PeopleOfPeace
 
     Raven.configure do |config|
       config.dsn = ENV['SENTRY_ID']
-      config.environments = ['production']
+      config.environments = ['staging', 'production']
     end
   end
 end
