@@ -8,6 +8,10 @@
   </head>
 
   <body>
+    <% unless Rails.env.production? %>
+      <h2>[<%= Rails.env %>]</h2>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
