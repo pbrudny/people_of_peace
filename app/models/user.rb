@@ -14,6 +14,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  scope :notifiable, -> { where(notify: true) }
+
   def owner?(person)
     person.user == self || person.coordinator == self
   end
