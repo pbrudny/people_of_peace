@@ -87,15 +87,12 @@
 }
 
 @media (max-width: 991px) {
+  .gm-style-mtc {
+    display: none;
+  }
+
   #legend {
-    display: inline-flex;
-    font-family: Arial, sans-serif;
-    background: #fff;
-    padding: 10px;
-    margin-bottom: 40%;
-    margin-left: 30%;
-    margin-right: 10%;
-    border: 2px solid black;
+    display: none;
   }
 
   #legend h3 {
