@@ -1,5 +1,5 @@
 <div id="map"></div>
-<div id="legend"><h3>Legenda</h3></div>
+<div id="legend"></div>
 <script>
     function initMap() {
         var startingLocation = {lat: <%= Person.last.try!(:latitude) %>, lng: <%= Person.last.try!(:longitude) %>};
@@ -66,19 +66,19 @@
         <% end %>
         var icons = {
             coordinator: {
-                name: 'Opiekun',
+                name: 'opiekun',
                 icon: "<%= asset_path('koordynator.png') %>"
             },
             person_green: {
-                name: 'Świeżo dodany',
+                name: 'bez opiekuna',
                 icon: "<%= asset_path('green_MarkerC.png') %>"
             },
             person_red: {
-                name: 'Nie ma opiekuna dłużej niż 10 dni',
+                name: 'bez opiekuna > 10 dni',
                 icon: "<%= asset_path('red_MarkerC.png') %>"
             },
             person_blue: {
-                name: 'Znalazł opiekuna',
+                name: 'znalazł opiekuna',
                 icon: "<%= asset_path('blue_MarkerC.png') %>"
             }
         };
