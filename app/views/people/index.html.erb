@@ -4,6 +4,8 @@
     function initMap() {
         var startingLocation = {lat: <%= Person.last.try!(:latitude) %>, lng: <%= Person.last.try!(:longitude) %>};
         var map = new google.maps.Map(document.getElementById('map'), {
+            streetViewControl: false,
+            mapTypeControl: false,
             zoom: 4,
             <%= Person.last ? 'center: startingLocation' : '' %>
         });
