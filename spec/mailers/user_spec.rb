@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe UserMailer, type: :mailer do
   let(:user) { create :user, email: 'koleszko@gmail.com' }
-  let(:person) { create :person }
+  let(:helping_user) { create :user, name: 'Dobry Człowiek' }
+  let(:person) { create :person, coordinator: helping_user }
 
   describe 'new_person' do
     let(:mail) { UserMailer.new_person(user, person) }

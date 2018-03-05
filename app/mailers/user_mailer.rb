@@ -14,7 +14,6 @@ class UserMailer < ApplicationMailer
   end
 
   def user_help(user, person)
-    @user = user
     @person = person
     @people_free = Person.free
     mail to: user.email, subject: I18n.t('user_mailer.user_help.subject')
