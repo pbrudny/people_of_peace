@@ -10,7 +10,7 @@
             <%= Person.last ? 'center: startingLocation' : '' %>
         });
         <% Person.where(display: true).each_with_index do |person, i| %>
-        var personOfPeace<%= i %> = {lat: <%= person.latitude + Math.cos(i/2*Math::PI) * i * 0.003 %>, lng: <%= person.longitude + Math.cos((i+1)/2*Math::PI) * i * 0.003 %>};
+        var personOfPeace<%= i %> = {lat: <%= person.latitude + Math.cos(i/2*Math::PI) * i * 0.004 %>, lng: <%= person.longitude + Math.cos((i+1)/2*Math::PI) * i * 0.004 %>};
         var marker<%= i %> = new google.maps.Marker({
             position: personOfPeace<%= i %>,
             icon: "<%= asset_path(person.marker_icon) %>",
@@ -22,7 +22,7 @@
                 'Opieka: <%= person.coordinator.try(:name)%>'+
                 '<%= link_to(' pomogę', help_person_path(person)) if !person.coordinator %>'+
                 '</div>'+
-                '<h1 id="firstHeading" class="firstHeading"><%= link_to person.name, person %></h1>'+
+                '<h1 id="firstHeading" class="firstHeading"><%= link_to person.name, person %></h1>'
                 '<div id="bodyContent">'+
                 '<%= t(person.fellowship) %>'+
                 '<ul>'+
