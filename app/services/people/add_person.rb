@@ -5,6 +5,7 @@ module People
     end
 
     def call
+      person.display = true
       if (result = person.save)
         notify_users
       end

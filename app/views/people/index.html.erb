@@ -10,7 +10,7 @@
             <%= Person.last ? 'center: startingLocation' : '' %>
         });
         <% Person.where(display: true).each_with_index do |person, i| %>
-        var personOfPeace<%= i %> = {lat: <%= person.latitude %>, lng: <%= person.longitude %>};
+        var personOfPeace<%= i %> = {lat: <%= person.latitude + Math.cos(i/2*Math::PI) * i * 0.002 %>, lng: <%= person.longitude + Math.cos((i+1)/2*Math::PI) * i * 0.002 %>};
         var marker<%= i %> = new google.maps.Marker({
             position: personOfPeace<%= i %>,
             icon: "<%= asset_path(person.marker_icon) %>",
