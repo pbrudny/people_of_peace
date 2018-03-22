@@ -9,6 +9,10 @@ class UserPreview < ActionMailer::Preview
     UserMailer.user_help(User.last, Person.last)
   end
 
+  def user_help_info
+    UserMailer.user_help_info(User.last, Person.last)
+  end
+
   def people_waiting
     UserMailer.people_waiting(User.last)
   end
@@ -16,5 +20,9 @@ class UserPreview < ActionMailer::Preview
   def new_user
     UserMailer.new_user(User.first, User.last)
   end
+
+ def welcome_user
+   UserMailer.welcome_user(User.last)
+ end
 
 end

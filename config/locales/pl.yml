@@ -463,6 +463,10 @@ pl:
       people_waiting: "Ludzie pokoju bez opiekunów!"
     new_user:
       subject: "Mamy nowego opiekuna :)"
+    welcome_user:
+      subject: "Dołączyłeś do grona opiekunów"
+    user_help_info:
+      subject: "Zgłosiłeś się do pomocy"
   person_help: "Pomoc zgłoszona. Dziękujemy!"
   person_not_needed: "%{user_name} już zgłosił chęć pomocy."
   age: "Wiek"

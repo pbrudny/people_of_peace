@@ -15,6 +15,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   scope :notifiable, -> { where(notify: true) }
+  scope :except_him, -> (user) { where.not(id: user.id) }
 
   def owner?(person)
     person.user == self || person.coordinator == self

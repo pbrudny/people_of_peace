@@ -1,0 +1,43 @@
+<h1>Hej <%= @user.name %></h1>
+
+<p>
+  Zgłosiłeś chęć opieki nad człowiekiem pokoju: <%= link_to(@person.name, @person, target: '_blank') %> (<%= @person.city %>)
+</p>
+
+<p>
+  Pamiętaj:
+  <ul>
+    <li>
+      Nie każda osoba zgłoszona na mapie może być tym prawdziwym "człowiekiem pokoju". Niektórym nie będziemy w stanie pomóc
+    </li>
+    <li>
+      Jeśli nie jesteś w stanie pomóc możesz zrezygnować i przekazać osobę innemu opiekunowi
+    </li>
+    <li>
+      Jeśli potrzebujesz więcej szczegółów odnośnie człowieka pokoju skontaktuj się opiekunem, który go zgłosił
+    </li>
+    <li>
+      W rozmowie powołaj się na opiekuna zgłaszającego a nie na stronę ludziepokoju.pl
+    </li>
+  </ul>
+</p>
+Materiały pomocnicze:
+<ul>
+  <li>
+    Plan prowadzenia studium biblijnego: <%= link_to '7historii.pl', 'http://7historii.pl' %>
+  </li>
+  <li>
+    <%= link_to 'Ewangelia przy pomocy kubeczków', 'http://7historii.pl/ewangelia-przy-pomocy-kubeczkow/' %>
+  </li>
+  <li>
+    <%= link_to 'Pakiet podstawowy ucznia', 'https://docs.google.com/presentation/d/1Oo2QTISi_uDYzcp6imywW74cNu6UTxZGlfqBe6FddzQ/edit' %> czyli
+    poradnik jak modlić sie o chorych, wyganiać demony, chrzcić itp.
+  </li>
+</ul>
+<p>
+  Dzięki za Twoją pomoc!
+</p>
+
+Pozdrawiam, <br>
+Piotrek
+

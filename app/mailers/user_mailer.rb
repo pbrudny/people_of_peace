@@ -19,8 +19,19 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: I18n.t('user_mailer.user_help.subject')
   end
 
+  def user_help_info(user, person)
+    @user = user
+    @person = person
+    mail to: user.email, subject: I18n.t('user_mailer.user_help_info.subject')
+  end
+
   def people_waiting(user)
     @people_free = Person.free
     mail to: user.email, subject: I18n.t('user_mailer.user_help.people_waiting')
+  end
+
+  def welcome_user(new_user)
+    @new_user = new_user
+    mail to: new_user.email, subject: I18n.t('user_mailer.welcome_user.subject')
   end
 end

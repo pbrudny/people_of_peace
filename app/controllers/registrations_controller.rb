@@ -1,7 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
-    User.where(notify: true).each do |user|
+    UserMailer.welcome_user(resource).deliver_now
+
+    User.notifiable.except_him(resource).each do |user|
       UserMailer.new_user(user, resource).deliver_now
     end
     people_path

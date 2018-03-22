@@ -49,6 +49,21 @@ RSpec.describe UserMailer, type: :mailer do
     end
   end
 
+  describe 'welcome_user' do
+    let(:new_user) { create :user, name: 'Nowy Opiekun', email: 'new.coordinator@gmail.com' }
+    let(:mail) { UserMailer.welcome_user(new_user) }
+
+    it 'renders the headers' do
+      expect(mail.subject).to eq 'Dołączyłeś do grona opiekunów'
+      expect(mail.to).to eq(['new.coordinator@gmail.com'])
+      expect(mail.from).to eq(['from@example.com'])
+    end
+
+    it 'renders the body' do
+      expect(mail.body.encoded).to match('Dzięki za chęć pomocy')
+    end
+  end
+
   describe 'user_help' do
     let(:mail) { UserMailer.user_help(user, person) }
 
@@ -60,6 +75,20 @@ RSpec.describe UserMailer, type: :mailer do
 
     it 'renders the body' do
       expect(mail.body.encoded).to match(' zaopiekuje się człowiekiem pokoju')
+    end
+  end
+
+  describe 'user_help_info' do
+    let(:mail) { UserMailer.user_help_info(user, person) }
+
+    it 'renders the headers' do
+      expect(mail.subject).to eq "Zgłosiłeś się do pomocy"
+      expect(mail.to).to eq(['koleszko@gmail.com'])
+      expect(mail.from).to eq(['from@example.com'])
+    end
+
+    it 'renders the body' do
+      expect(mail.body.encoded).to match('Zgłosiłeś chęć opieki')
     end
   end
 end
