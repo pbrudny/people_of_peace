@@ -91,7 +91,12 @@
         <%= f.select :priority, Person.priority_options %>
       </div>
 
-      <hr />
+      <div class="field">
+        <%= f.label :display, t('display') %>
+        <%= f.check_box :display %>
+      </div>
+
+    <hr />
       <h3>Dodatkowe uwagi</h3>
       <div class="note-area">
         <%= f.text_area :note %>

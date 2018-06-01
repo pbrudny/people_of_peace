@@ -9,7 +9,7 @@ class Person < ApplicationRecord
   validates :city, presence: { message: I18n.t('activerecord.errors.models.person.attributes.city.blank') }
   validates :contact, presence: { message: I18n.t('activerecord.errors.models.person.attributes.contact.blank') }
 
-  scope :free, -> { where(coordinator_id: nil) }
+  scope :free, -> { where(coordinator_id: nil, display: true) }
 
   def self.background_options
     ['Zwyczajny', 'New age', 'Metal', 'rozwój osobisty', 'okultyzm i magia', 'uzależnienie', 'nie wiem']

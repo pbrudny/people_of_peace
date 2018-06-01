@@ -82,7 +82,8 @@ class PeopleController < ApplicationController
         :remote_possible,
         :background,
         :status,
-        :coordinator_id
+        :coordinator_id,
+        :display
       )
     end
 end
