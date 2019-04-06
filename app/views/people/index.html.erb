@@ -109,7 +109,8 @@
               <td><%= link_to "#{person.name} (#{person.city})", person %></td>
               <% if current_user.admin || current_user.owner?(person) %>
                 <td><%= link_to t('edit'), edit_person_path(person) %></td>
-              <% end %>
+                <td><%= link_to t('destroy'), person, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć to zgłoszenie?' } %></td>
+            <% end %>
             </tr>
           <% end %>
           </tbody>
@@ -131,6 +132,7 @@
               <td><%= link_to "#{person.name} (#{person.city})", person %></td>
               <td><%= link_to person.user.try!(:name), person.user %></td>
               <td><%= time_ago_in_words(person.created_at) %> <%= t('ago')%></td>
+              <td><%= link_to t('destroy'), person, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć to zgłoszenie?' } %></td>
             </tr>
           <% end %>
           </tbody>
@@ -147,6 +149,7 @@
             <td><%= link_to "#{person.name} (#{person.city})", person %></td>
             <% if current_user.admin || current_user.owner?(person) %>
               <td><%= link_to t('edit'), edit_person_path(person) %></td>
+              <td><%= link_to t('destroy'), person, method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć to zgłoszenie?' } %></td>
             <% end %>
           </tr>
         <% end %>
