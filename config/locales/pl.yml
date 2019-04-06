@@ -353,7 +353,7 @@ pl:
       locked: Twoje konto jest zablokowane.
       not_found_in_database: Błędny adres %{authentication_keys} lub hasło.
       timeout: Sesja wygasła, aby kontynuować zaloguj się ponownie.
-      unauthenticated: Aby kontynuować zaloguj lub zarejestruj się.
+      unauthenticated: Zaloguj się aby kontynuować.
       unconfirmed: Aby kontynuować aktywuj konto.
     mailer:
       confirmation_instructions:
